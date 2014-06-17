@@ -373,6 +373,14 @@ function _start()
                 # Make sure any displays pushed in .juliarc.jl ends up above the
                 # REPLDisplay
                 pushdisplay(REPL.REPLDisplay(active_repl))
+
+                # Set COLUMNS and LINES to terminal size so that
+                # tty_rows()/tty_cols() work
+                try
+                    sz = size(term)
+                    ENV["COLUMNS"] = sz.width
+                    ENV["LINES"] = sz.height
+                end
             end
         end
 
