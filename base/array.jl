@@ -1150,7 +1150,7 @@ function findmin(a)
     return (m, mi)
 end
 
-function findextrema(a)
+function findminmax(a)
     if isempty(a)
         error("array must be non-empty")
     end
@@ -1161,7 +1161,8 @@ function findextrema(a)
         if ai < vmin || vmin!=vmin
             vmin = ai
             imin = i
-        elseif ai > vmax || vmax!=vmax
+        end
+        if ai > vmax || vmax!=vmax
             vmax = ai
             imax = i
         end
@@ -1169,9 +1170,9 @@ function findextrema(a)
     return ((vmin,imin), (vmax,imax))
 end
 
-indmax(a) = findmax(a)[2]
-indmin(a) = findmin(a)[2]
-indextrema(a) = (x = findextrema(a); (x[1][2], x[2][2]))
+argmax(a) = findmax(a)[2]
+argmin(a) = findmin(a)[2]
+argminmax(a) = (x = findminmax(a); (x[1][2], x[2][2]))
 
 # similar to Matlab's ismember
 # returns a vector containing the highest index in b for each value in a that is a member of b
