@@ -11,7 +11,7 @@ All package manager commands are found in the ``Pkg`` module, included in Julia'
 
 Package Status
 --------------
-
+B
 The ``Pkg.status()`` function prints out a summary of the state of packages you have installed.
 Initially, you'll have no packages installed::
 
@@ -331,8 +331,8 @@ This creates the directory ``~/.julia/v0.3/FooBar``, initializes it as a git rep
      src/FooBar.jl |  5 +++++
      4 files changed, 44 insertions(+)
 
-At the moment, the package manager knows about the MIT "Expat" License, indicated by ``"MIT"``, and the Simplified BSD License, indicated by ``"BSD"``.
-If you want to use a different license, you can ask us to add it to the package generator, or just pick one of these two and then modify the ``~/.julia/v0.3/PACKAGE/LICENSE.md`` file after it has been generated.
+At the moment, the package manager knows about the MIT "Expat" License, indicated by ``"MIT"``, the Simplified BSD License, indicated by ``"BSD"``, and version 2.0 of the Apache License, indicated by ``"ASL"``.
+If you want to use a different license, you can ask us to add it to the package generator, or just pick one of these three and then modify the ``~/.julia/v0.3/PACKAGE/LICENSE.md`` file after it has been generated.
 
 If you created a GitHub account and configured git to know about it, ``Pkg.generate`` will set an appropriate origin URL for you.
 It will also automatically generate a ``.travis.yml`` file for using the `Travis <https://travis-ci.org>`_ automated testing service.
